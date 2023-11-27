@@ -1,0 +1,35 @@
+/* search.module.css */
+.searchBox {
+  border: 0;
+  background-color: transparent;
+}
+
+.searchComponents,
+.searchModule {
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+.searchComponents {
+  flex-direction: row;
+  justify-content: flex-start;
+
+  gap: var(--gap-base);
+}
+
+.searchModule {
+  position: absolute;
+  top: 72px;
+  left: calc(50% - 408px);
+  border-radius: var(--br-xl);
+  background-color: var(--white);
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: var(--padding-5xl);
+}
+
+.button {
+  margin-top: 2%;
+
+}
