@@ -19,7 +19,7 @@ const Giphy = ({ searchTerm }) => {
                 const limit = 24;
 
                 const response = await axios.get(
-                    `http://api.giphy.com/v1/gifs/search?q=${searchTerm}&limit=${limit}&api_key=${apiKey}`
+                    `https://api.giphy.com/v1/gifs/search?q=${searchTerm}&limit=${limit}&api_key=${apiKey}`
                 );
 
                 if (response.data.data && response.data.data.length > 0) {
