@@ -14,31 +14,30 @@ const Giphy = ({ searchTerm }) => {
 
     useEffect(() => {
         const fetchGifs = async () => {
-            try {
-                const apiKey = 'GlVGYHkr3WSBnllca54iNt0yFbjz7L65';
-                const limit = 24;
-
-                const response = await axios.get(
-                    `https://api.giphy.com/v1/gifs/search?q=${searchTerm}&limit=${limit}&api_key=${apiKey}`
-                );
-
-                if (response.data.data && response.data.data.length > 0) {
-                    setGifs(response.data.data);
-                } else {
-                    console.error('No GIFs found for the given search term:', searchTerm);
-                }
-            } catch (error) {
-                console.error('Error fetching GIFs:', error);
+          try {
+            const apiKey = 'GlVGYHkr3WSBnllca54iNt0yFbjz7L65';
+            const limit = 24;
+    
+            const response = await fetch(
+              `https://api.giphy.com/v1/gifs/search?q=${searchTerm}&limit=${limit}&api_key=${apiKey}`
+            );
+    
+            const data = await response.json();
+    
+            if (data.data && data.data.length > 0) {
+              setGifs(data.data);
+            } else {
+              console.error('No GIFs found for the given search term:', searchTerm);
             }
+          } catch (error) {
+            console.error('Error fetching GIFs:', error);
+          }
         };
-
-
+    
         if (searchTerm) {
-            fetchGifs();
-        } else {
-            setGifs([]);
+          fetchGifs();
         }
-    }, [searchTerm]);
+      }, [searchTerm]);
 
     const addToFavorites = (gif) => {
         setFavorites((prevFavorites) => [...prevFavorites, gif]);
