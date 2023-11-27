@@ -1,4 +1,4 @@
-import css from '../../app/page.module.css';
+import css from '../../styles/page.module.css';
 
 const Button = ({ label, onClick }) => {
 	return (

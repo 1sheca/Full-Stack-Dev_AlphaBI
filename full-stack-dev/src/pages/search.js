@@ -1,6 +1,6 @@
 import { useState, useContext } from 'react';
 import Head from 'next/head';
-
+import Giphy from '../components/giphy';
 import { useRouter } from 'next/router';
 import css from '../styles/page.module.css';
 import { getAuth, signOut } from '../components/firebase';
@@ -74,7 +74,7 @@ const Search = () => {
                     Search
                 </Button>
 
-
+                <Giphy searchTerm={searchTerm} />
             </main>
         </div>
     );

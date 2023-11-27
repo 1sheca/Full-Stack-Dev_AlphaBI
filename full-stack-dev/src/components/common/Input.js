@@ -1,4 +1,4 @@
-import css from 'styles/Input.module.css';
+import css from '../../styles/Input.module.css';
 
 const Input = ({ htmlFor, label, type, autoFocus, value, onChange, err }) => {
 	return (
