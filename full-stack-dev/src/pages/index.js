@@ -44,7 +44,7 @@ export default function Home() {
 					</div>
 				) : (
 					<div className={css.card}>
-						<h1>Welcome to Git Search</h1>
+						<h1>Welcome to GIF Search</h1>
 						<div className={css.buttonsContainer}>
 							<Link href="/login" passHref>
 								<button className={css.button}>Go To Login Page</button>
